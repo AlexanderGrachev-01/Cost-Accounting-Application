@@ -10,6 +10,8 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
     
+    private var categories: [String] = ["Дом", "Продукты", "Досуг", "Постоянные траты", "Путешествия"]
+    
     // MARK: - SubViews
     
     private lazy var addExpenseCategoryButton = UIButton()
@@ -38,6 +40,11 @@ final class HomeViewController: UIViewController {
     }
     
     private func configureTableView() {
+        tableView.separatorStyle = .singleLine
+        tableView.register(GeneralInfoCell.self, forCellReuseIdentifier: GeneralInfoCell.identifier)
+        tableView.register(ExpensesCategoryCell.self, forCellReuseIdentifier: ExpensesCategoryCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -74,6 +81,39 @@ final class HomeViewController: UIViewController {
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(44)
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralInfoCell.identifier, for: indexPath) as! GeneralInfoCell
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ExpensesCategoryCell.identifier, for: indexPath) as! ExpensesCategoryCell
+            cell.configure(name: categories[indexPath.row - 1], expenses: "")
+            return cell
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 92
+        default:
+            return 50
         }
     }
 }

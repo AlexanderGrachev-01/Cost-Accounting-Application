@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
         let scheduleVC = ExpenseScheduleViewController()
         let paymentVC = PaymentScheduleViewController()
         
-        homeVC.navigationItem.largeTitleDisplayMode = .automatic
+        homeVC.navigationItem.largeTitleDisplayMode = .never
         scheduleVC.navigationItem.largeTitleDisplayMode = .automatic
         paymentVC.navigationItem.largeTitleDisplayMode = .automatic
         
