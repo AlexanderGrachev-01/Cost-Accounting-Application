@@ -9,21 +9,30 @@
 /* Begin PBXBuildFile section */
 		F6E2D7AA298579F400D4A214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7A9298579F400D4A214 /* AppDelegate.swift */; };
 		F6E2D7AC298579F400D4A214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7AB298579F400D4A214 /* SceneDelegate.swift */; };
-		F6E2D7AE298579F400D4A214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7AD298579F400D4A214 /* ViewController.swift */; };
-		F6E2D7B1298579F400D4A214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D7AF298579F400D4A214 /* Main.storyboard */; };
+		F6E2D7AE298579F400D4A214 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7AD298579F400D4A214 /* TabBarController.swift */; };
 		F6E2D7B3298579F500D4A214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D7B2298579F500D4A214 /* Assets.xcassets */; };
 		F6E2D7B6298579F500D4A214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D7B4298579F500D4A214 /* LaunchScreen.storyboard */; };
+		F6E2D7C129857BD500D4A214 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6E2D7C029857BD500D4A214 /* SnapKit */; };
+		F6E2D7C429857FD900D4A214 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7C329857FD900D4A214 /* HomeViewController.swift */; };
+		F6E2D7C62985803B00D4A214 /* ExpenseScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7C52985803B00D4A214 /* ExpenseScheduleViewController.swift */; };
+		F6E2D7C8298580A600D4A214 /* ExpenseCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7C7298580A600D4A214 /* ExpenseCategoriesViewController.swift */; };
+		F6E2D7CA2985810600D4A214 /* PaymentScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7C92985810600D4A214 /* PaymentScheduleViewController.swift */; };
+		F6E2D7CD2985841900D4A214 /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7CC2985841900D4A214 /* UIView+ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6E2D7A6298579F400D4A214 /* Cost-Accounting-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cost-Accounting-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E2D7A9298579F400D4A214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E2D7AB298579F400D4A214 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6E2D7AD298579F400D4A214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F6E2D7B0298579F400D4A214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6E2D7AD298579F400D4A214 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F6E2D7B2298579F500D4A214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6E2D7B5298579F500D4A214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6E2D7B7298579F500D4A214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6E2D7C329857FD900D4A214 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6E2D7C52985803B00D4A214 /* ExpenseScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseScheduleViewController.swift; sourceTree = "<group>"; };
+		F6E2D7C7298580A600D4A214 /* ExpenseCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoriesViewController.swift; sourceTree = "<group>"; };
+		F6E2D7C92985810600D4A214 /* PaymentScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleViewController.swift; sourceTree = "<group>"; };
+		F6E2D7CC2985841900D4A214 /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E2D7C129857BD500D4A214 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +66,51 @@
 		F6E2D7A8298579F400D4A214 /* Cost-Accounting-Application */ = {
 			isa = PBXGroup;
 			children = (
+				F6E2D7C229857DD100D4A214 /* Views */,
+				F6E2D7BD29857A6F00D4A214 /* Controllers */,
+				F6E2D7BE29857A8D00D4A214 /* Resources */,
+				F6E2D7CB298583F600D4A214 /* Extensions */,
+			);
+			path = "Cost-Accounting-Application";
+			sourceTree = "<group>";
+		};
+		F6E2D7BD29857A6F00D4A214 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6E2D7C329857FD900D4A214 /* HomeViewController.swift */,
+				F6E2D7C52985803B00D4A214 /* ExpenseScheduleViewController.swift */,
+				F6E2D7C7298580A600D4A214 /* ExpenseCategoriesViewController.swift */,
+				F6E2D7C92985810600D4A214 /* PaymentScheduleViewController.swift */,
+				F6E2D7AD298579F400D4A214 /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F6E2D7BE29857A8D00D4A214 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				F6E2D7A9298579F400D4A214 /* AppDelegate.swift */,
 				F6E2D7AB298579F400D4A214 /* SceneDelegate.swift */,
-				F6E2D7AD298579F400D4A214 /* ViewController.swift */,
-				F6E2D7AF298579F400D4A214 /* Main.storyboard */,
 				F6E2D7B2298579F500D4A214 /* Assets.xcassets */,
 				F6E2D7B4298579F500D4A214 /* LaunchScreen.storyboard */,
 				F6E2D7B7298579F500D4A214 /* Info.plist */,
 			);
-			path = "Cost-Accounting-Application";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6E2D7C229857DD100D4A214 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6E2D7CB298583F600D4A214 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6E2D7CC2985841900D4A214 /* UIView+ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +129,9 @@
 			dependencies = (
 			);
 			name = "Cost-Accounting-Application";
+			packageProductDependencies = (
+				F6E2D7C029857BD500D4A214 /* SnapKit */,
+			);
 			productName = "Cost-Accounting-Application";
 			productReference = F6E2D7A6298579F400D4A214 /* Cost-Accounting-Application.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +160,9 @@
 				Base,
 			);
 			mainGroup = F6E2D79D298579F400D4A214;
+			packageReferences = (
+				F6E2D7BF29857BD500D4A214 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F6E2D7A7298579F400D4A214 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +179,6 @@
 			files = (
 				F6E2D7B6298579F500D4A214 /* LaunchScreen.storyboard in Resources */,
 				F6E2D7B3298579F500D4A214 /* Assets.xcassets in Resources */,
-				F6E2D7B1298579F400D4A214 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +189,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E2D7AE298579F400D4A214 /* ViewController.swift in Sources */,
+				F6E2D7CD2985841900D4A214 /* UIView+ext.swift in Sources */,
+				F6E2D7C62985803B00D4A214 /* ExpenseScheduleViewController.swift in Sources */,
+				F6E2D7C8298580A600D4A214 /* ExpenseCategoriesViewController.swift in Sources */,
+				F6E2D7AE298579F400D4A214 /* TabBarController.swift in Sources */,
+				F6E2D7CA2985810600D4A214 /* PaymentScheduleViewController.swift in Sources */,
 				F6E2D7AA298579F400D4A214 /* AppDelegate.swift in Sources */,
 				F6E2D7AC298579F400D4A214 /* SceneDelegate.swift in Sources */,
+				F6E2D7C429857FD900D4A214 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F6E2D7AF298579F400D4A214 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6E2D7B0298579F400D4A214 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F6E2D7B4298579F500D4A214 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,12 +337,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cost-Accounting-Application/Info.plist";
+				INFOPLIST_FILE = "Cost-Accounting-Application/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "My Money";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +351,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AG.Cost-Accounting-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +369,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJAQY24NC2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cost-Accounting-Application/Info.plist";
+				INFOPLIST_FILE = "Cost-Accounting-Application/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "My Money";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +383,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AG.Cost-Accounting-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +414,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6E2D7BF29857BD500D4A214 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6E2D7C029857BD500D4A214 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6E2D7BF29857BD500D4A214 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6E2D79E298579F400D4A214 /* Project object */;
 }
