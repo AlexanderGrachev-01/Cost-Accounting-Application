@@ -116,6 +116,10 @@ extension HomeViewController: UITableViewDelegate {
             return 50
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - Buttons Action
@@ -123,7 +127,8 @@ extension HomeViewController: UITableViewDelegate {
 private extension HomeViewController {
     @objc
     func addExpenseCategoryAction() {
-        
+        let vc = AddCategoryViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
