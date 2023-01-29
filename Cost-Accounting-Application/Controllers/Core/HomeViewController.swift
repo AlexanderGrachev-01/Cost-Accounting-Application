@@ -45,6 +45,7 @@ final class HomeViewController: UIViewController {
         tableView.register(ExpensesCategoryCell.self, forCellReuseIdentifier: ExpensesCategoryCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 76, right: 0)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -59,14 +60,14 @@ final class HomeViewController: UIViewController {
         addExpenseCategoryButton.backgroundColor = .systemBlue
         addExpenseCategoryButton.layer.cornerRadius = 12
         addExpenseCategoryButton.addTarget(self, action: #selector(addExpenseCategoryAction), for: .touchUpInside)
-        addExpenseCategoryButton.setTitle("Add category", for: .normal)
+        addExpenseCategoryButton.setTitle("Добавить категорию", for: .normal)
     }
     
     private func configureAddIncomeButton() {
         addIncomeButton.backgroundColor = .systemBlue
         addIncomeButton.layer.cornerRadius = 12
         addIncomeButton.addTarget(self, action: #selector(addIncomeAction), for: .touchUpInside)
-        addIncomeButton.setTitle("Add income", for: .normal)
+        addIncomeButton.setTitle("Добавить доход", for: .normal)
     }
     
     private func configureButtonStackView() {
@@ -99,7 +100,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ExpensesCategoryCell.identifier, for: indexPath) as! ExpensesCategoryCell
-            cell.configure(name: categories[indexPath.row - 1], expenses: "")
+            cell.configure(name: categories[indexPath.row - 1], expenses: "0")
             return cell
         }
     }
@@ -119,6 +120,14 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            return
+        default:
+            let vc = ExpenseCategoriesViewController()
+            vc.title = categories[indexPath.row - 1]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -127,12 +136,35 @@ extension HomeViewController: UITableViewDelegate {
 private extension HomeViewController {
     @objc
     func addExpenseCategoryAction() {
-        let vc = AddCategoryViewController()
+        let vc = AddNameViewController()
+        vc.delegate = self
+        vc.buttonTitle = "Добавить категорию расходов"
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
     func addIncomeAction() {
-        
+        let vc = AddNameCountViewController()
+        vc.delegate = self
+        vc.buttonTitle = "Добавить доход"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - AddNameDelegate
+
+extension HomeViewController: AddNameDelegate {
+    func returnName(name: String) {
+        categories.append(name)
+        tableView.reloadData()
+    }
+}
+
+// MARK: - AddNameDelegate
+
+extension HomeViewController: AddNameCountDelegate {
+    func returnNameCount(name: String, count: Double) {
+        categories.append(name + String(count))
+        tableView.reloadData()
     }
 }

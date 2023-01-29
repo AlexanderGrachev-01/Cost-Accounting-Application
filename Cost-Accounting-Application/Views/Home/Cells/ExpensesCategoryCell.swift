@@ -40,7 +40,6 @@ final class ExpensesCategoryCell: UITableViewCell {
     }
     
     private func configureCategoryNameLabel() {
-        categoryNameLabel.text = "Категория"
         categoryNameLabel.textColor = .label
         categoryNameLabel.font = .systemFont(ofSize: 22, weight: .regular)
         categoryNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +80,6 @@ final class ExpensesCategoryCell: UITableViewCell {
     
     public func configure(name: String, expenses: String) {
         categoryNameLabel.text = name
-        !expenses.isEmpty ? (expensesLabel.text = expenses + "₽") : (expensesLabel.text = "0₽")
+        expensesLabel.text = expenses + "₽"
     }
 }

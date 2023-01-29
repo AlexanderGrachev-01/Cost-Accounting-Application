@@ -1,5 +1,5 @@
 //
-//  AddCategoryViewController.swift
+//  AddNameViewController.swift
 //  Cost-Accounting-Application
 //
 //  Created by Aleksandr.Grachev on 28.01.2023.
@@ -8,12 +8,19 @@
 import UIKit
 import SnapKit
 
-final class AddCategoryViewController: UIViewController {
+protocol AddNameDelegate: AnyObject {
+    func returnName(name: String)
+}
+
+final class AddNameViewController: UIViewController {
+    
+    var delegate: AddNameDelegate?
+    var buttonTitle: String = "Добавить"
     
     // MARK: - Subviews
     
-    lazy var button = UIButton()
-    lazy var textField = UITextField()
+    private lazy var button = UIButton()
+    private lazy var textField = UITextField()
     private lazy var textFieldUnderline = UIView()
     
     // MARK: - LifeCycle
@@ -42,10 +49,9 @@ final class AddCategoryViewController: UIViewController {
     private func configureTextField() {
         textField.borderStyle = .none
         textField.textColor = .label
-        textField.returnKeyType = .default
         textField.delegate = self
         textField.placeholder = "Наименование"
-        textField.font = .systemFont(ofSize: 18, weight: .semibold)
+        textField.font = .systemFont(ofSize: 18, weight: .regular)
         textField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textField)
         
@@ -77,7 +83,7 @@ final class AddCategoryViewController: UIViewController {
         button.alpha = 0.5
         button.isEnabled = false
         button.setTitleColor(.systemBackground, for: .normal)
-        button.setTitle("Добавить категорию расходов", for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
         button.layer.cornerRadius = 12
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
@@ -94,19 +100,21 @@ final class AddCategoryViewController: UIViewController {
 
 // MARK: - Buttons Action
 
-private extension AddCategoryViewController {
+private extension AddNameViewController {
     @objc
     func buttonWasTapped() {
+        guard let text = textField.text else { return }
+        delegate?.returnName(name: text)
         navigationController?.popViewController(animated: true)
     }
 }
 
 // MARK: - UITextFieldDelegate
 
-extension AddCategoryViewController: UITextFieldDelegate {
+extension AddNameViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let count = textField.text?.count,
-              count > 0 else {
+        guard let text = textField.text,
+              text.count > 0 else {
             button.alpha = 0.5
             button.isEnabled = false
             return
