@@ -9,8 +9,14 @@ import UIKit
 import SnapKit
 
 final class ExpenseCategoriesViewController: UIViewController {
+    // MARK: - Properties
     
-    private var expenses: [String] = []
+    var categoryIndex = 0
+    private var expenses: [ExpensesModel] = []
+    
+    // MARK: - Managers
+    
+    private let userManager = UserManager.shared
     
     // MARK: - SubViews
     
@@ -72,12 +78,13 @@ final class ExpenseCategoriesViewController: UIViewController {
 
 extension ExpenseCategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expenses.count
+        return userManager.profile.expensesCategories[self.categoryIndex].expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ExpenseIncomeCell.identifier, for: indexPath) as! ExpenseIncomeCell
-        cell.configure(name: expenses[indexPath.row], expenses: "0")
+        expenses = userManager.profile.expensesCategories[self.categoryIndex].expenses
+        cell.configure(name: expenses[indexPath.row].name, expenses: expenses[indexPath.row].amount)
         return cell
     }
 }
@@ -102,7 +109,7 @@ private extension ExpenseCategoriesViewController {
 
 extension ExpenseCategoriesViewController: AddNameCountDelegate {
     func returnNameCount(name: String, count: Double) {
-        expenses.append(name + " " + String(count))
+        userManager.addExpenses(categoryIndex: categoryIndex, name: name, amount: count)
         tableView.reloadData()
     }
 }

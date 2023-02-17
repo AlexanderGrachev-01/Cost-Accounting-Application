@@ -41,7 +41,7 @@ final class ExpensesCategoryCell: UITableViewCell {
     
     private func configureCategoryNameLabel() {
         categoryNameLabel.textColor = .label
-        categoryNameLabel.font = .systemFont(ofSize: 22, weight: .regular)
+        categoryNameLabel.font = .systemFont(ofSize: 20, weight: .regular)
         categoryNameLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(categoryNameLabel)
         
@@ -78,8 +78,8 @@ final class ExpensesCategoryCell: UITableViewCell {
     
     // MARK: - Public
     
-    public func configure(name: String, expenses: String) {
+    public func configure(name: String, amount: Double) {
         categoryNameLabel.text = name
-        expensesLabel.text = expenses + "₽"
+        expensesLabel.text = String(amount) + "₽"
     }
 }

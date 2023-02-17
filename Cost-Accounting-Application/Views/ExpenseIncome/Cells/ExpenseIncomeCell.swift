@@ -64,8 +64,8 @@ final class ExpenseIncomeCell: UITableViewCell {
     
     // MARK: - Public
     
-    public func configure(name: String, expenses: String) {
+    public func configure(name: String, expenses: Double) {
         nameLabel.text = name
-        expenseIncomeLabel.text = "-" + expenses + "₽"
+        expenseIncomeLabel.text = "-\(expenses)₽"
     }
 }

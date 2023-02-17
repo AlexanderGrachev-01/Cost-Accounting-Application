@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6BB40F229971803004CED50 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40F129971803004CED50 /* UserManager.swift */; };
+		F6BB40F5299718EC004CED50 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40F4299718EC004CED50 /* UserProfile.swift */; };
+		F6BB40F72997C96B004CED50 /* IncomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40F62997C96A004CED50 /* IncomeModel.swift */; };
+		F6BB40F92997C9FE004CED50 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40F82997C9FE004CED50 /* PaymentModel.swift */; };
+		F6BB40FB2997CA62004CED50 /* ExpensesCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40FA2997CA62004CED50 /* ExpensesCategoryModel.swift */; };
+		F6BB40FD2997CAD7004CED50 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BB40FC2997CAD7004CED50 /* ExpensesModel.swift */; };
 		F6E2D7AA298579F400D4A214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7A9298579F400D4A214 /* AppDelegate.swift */; };
 		F6E2D7AC298579F400D4A214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7AB298579F400D4A214 /* SceneDelegate.swift */; };
 		F6E2D7AE298579F400D4A214 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2D7AD298579F400D4A214 /* TabBarController.swift */; };
@@ -26,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F6BB40F129971803004CED50 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		F6BB40F4299718EC004CED50 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F6BB40F62997C96A004CED50 /* IncomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeModel.swift; sourceTree = "<group>"; };
+		F6BB40F82997C9FE004CED50 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
+		F6BB40FA2997CA62004CED50 /* ExpensesCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoryModel.swift; sourceTree = "<group>"; };
+		F6BB40FC2997CAD7004CED50 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		F6E2D7A6298579F400D4A214 /* Cost-Accounting-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cost-Accounting-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E2D7A9298579F400D4A214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E2D7AB298579F400D4A214 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +69,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6BB40F0299717ED004CED50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB40F4299718EC004CED50 /* UserProfile.swift */,
+				F6BB40F62997C96A004CED50 /* IncomeModel.swift */,
+				F6BB40FA2997CA62004CED50 /* ExpensesCategoryModel.swift */,
+				F6BB40FC2997CAD7004CED50 /* ExpensesModel.swift */,
+				F6BB40F82997C9FE004CED50 /* PaymentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6BB40F329971869004CED50 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB40F129971803004CED50 /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		F6E2D79D298579F400D4A214 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +108,8 @@
 		F6E2D7A8298579F400D4A214 /* Cost-Accounting-Application */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB40F329971869004CED50 /* Managers */,
+				F6BB40F0299717ED004CED50 /* Models */,
 				F6E2D7C229857DD100D4A214 /* Views */,
 				F6E2D7BD29857A6F00D4A214 /* Controllers */,
 				F6E2D7BE29857A8D00D4A214 /* Resources */,
@@ -254,15 +288,21 @@
 			files = (
 				F6E2D7DD2985F08000D4A214 /* ExpenseIncomeCell.swift in Sources */,
 				F6E2D7CD2985841900D4A214 /* UIView+ext.swift in Sources */,
+				F6BB40FB2997CA62004CED50 /* ExpensesCategoryModel.swift in Sources */,
+				F6BB40FD2997CAD7004CED50 /* ExpensesModel.swift in Sources */,
+				F6BB40F5299718EC004CED50 /* UserProfile.swift in Sources */,
+				F6BB40F229971803004CED50 /* UserManager.swift in Sources */,
 				F6E2D7C62985803B00D4A214 /* ExpenseScheduleViewController.swift in Sources */,
 				F6E2D7D22985A34C00D4A214 /* ExpensesCategoryCell.swift in Sources */,
 				F6E2D7C8298580A600D4A214 /* ExpenseCategoriesViewController.swift in Sources */,
 				F6E2D7AE298579F400D4A214 /* TabBarController.swift in Sources */,
+				F6BB40F72997C96B004CED50 /* IncomeModel.swift in Sources */,
 				F6E2D7CA2985810600D4A214 /* PaymentScheduleViewController.swift in Sources */,
 				F6E2D7AA298579F400D4A214 /* AppDelegate.swift in Sources */,
 				F6E2D7AC298579F400D4A214 /* SceneDelegate.swift in Sources */,
 				F6E2D7D02985911500D4A214 /* GeneralInfoCell.swift in Sources */,
 				F6E2D7C429857FD900D4A214 /* HomeViewController.swift in Sources */,
+				F6BB40F92997C9FE004CED50 /* PaymentModel.swift in Sources */,
 				F6E2D7D62985C20000D4A214 /* AddNameCountViewController.swift in Sources */,
 				F6E2D7D42985AADE00D4A214 /* AddNameViewController.swift in Sources */,
 			);

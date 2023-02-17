@@ -80,9 +80,9 @@ final class GeneralInfoCell: UITableViewCell {
     
     // MARK: - Public
     
-    public func configure(balance: String, expenses: String, income: String) {
-        balanceLabel.text = "Баланс: " + balance + "₽"
-        expensesLabel.text = "Расходы: " + balance + "₽"
-        incomeLabel.text = "Доходы: " + balance + "₽"
+    public func configure(balance: Double, expenses: Double, income: Double) {
+        balanceLabel.text = "Баланс: \(balance)₽"
+        expensesLabel.text = "Расходы:  \(expenses)₽"
+        incomeLabel.text = "Доходы:  \(income)₽"
     }
 }

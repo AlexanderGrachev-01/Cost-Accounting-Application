@@ -9,8 +9,9 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
+    // MARK: - Managers
     
-    private var categories: [String] = ["Дом", "Продукты", "Досуг", "Постоянные траты", "Путешествия"]
+    private let userManager = UserManager.shared
     
     // MARK: - SubViews
     
@@ -25,6 +26,12 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         configureViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     // MARK: - layout
@@ -90,17 +97,23 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count + 1
+        return (userManager.profile.expensesCategories.count) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: GeneralInfoCell.identifier, for: indexPath) as! GeneralInfoCell
+            let profile = userManager.profile
+            cell.configure(balance: profile.moneyAmount,
+                           expenses: profile.expensesAmount,
+                           income: profile.incomeAmount)
             return cell
         default:
+            let category = userManager.profile.expensesCategories[indexPath.row - 1]
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: ExpensesCategoryCell.identifier, for: indexPath) as! ExpensesCategoryCell
-            cell.configure(name: categories[indexPath.row - 1], expenses: "0")
+            cell.configure(name: category.name, amount: category.amount)
             return cell
         }
     }
@@ -124,8 +137,10 @@ extension HomeViewController: UITableViewDelegate {
         case 0:
             return
         default:
+            let category = userManager.profile.expensesCategories[indexPath.row - 1]
             let vc = ExpenseCategoriesViewController()
-            vc.title = categories[indexPath.row - 1]
+            vc.categoryIndex = indexPath.row - 1
+            vc.title = category.name
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -152,19 +167,21 @@ private extension HomeViewController {
 }
 
 // MARK: - AddNameDelegate
+// Add expenses category
 
 extension HomeViewController: AddNameDelegate {
     func returnName(name: String) {
-        categories.append(name)
+        userManager.addExpensesCategory(name: name)
         tableView.reloadData()
     }
 }
 
 // MARK: - AddNameDelegate
+// Add income category
 
 extension HomeViewController: AddNameCountDelegate {
     func returnNameCount(name: String, count: Double) {
-        categories.append(name + String(count))
+        userManager.addIncome(name: name, amount: count)
         tableView.reloadData()
     }
 }
